@@ -1,0 +1,14 @@
+{
+    "name": "henribaeyens/faketory",
+    "description": "Anonymizes user data in your developement database",
+    "type": "prestashop-module",
+    "autoload": {
+        "psr-4": {
+            "PrestaShop\\Module\\Faketory\\": "src/"
+        },
+        "classmap": ["faketory.php"]
+    },
+    "config": {
+        "prepend-autoloader": false
+    }
+}
