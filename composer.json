@@ -10,5 +10,9 @@
     },
     "config": {
         "prepend-autoloader": false
+    },
+    "require": {
+        "php": ">=7.4",
+        "fakerphp/faker": "^1.23"
     }
 }

@@ -1,0 +1,8 @@
+faketory_anomymize:
+    path: faketory/anonymize
+    methods: [GET]
+    defaults:
+      _controller: 'PrestaShop\Module\Faketory\Controller\Admin\FaketoryController::anonymizeAction'
+
+
+

@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    public: true
+    autowire: true
+
+  prestashop.module.faketory.processor_factory:
+    class: PrestaShop\Module\Faketory\Processor\ProcessorFactory
+
+  PrestaShop\Module\Faketory\Controller\Admin\FaketoryController:
+    class: PrestaShop\Module\Faketory\Controller\Admin\FaketoryController
+    arguments:
+      - '@prestashop.module.faketory.processor_factory'
