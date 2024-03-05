@@ -2,7 +2,8 @@
 
 Faketory is a data anomymization module for Prestashop.  
 Supported versions are 1.7 and 8.  
-Version of PHP should be greater or equal to 7.4, which is the minimal requirement for the FakerPHP package.
+Version of PHP should be greater or equal to 7.4, which is the minimal requirement for the FakerPHP package.  
+The module uses the FakerPHP/Faker package to update those tables with fake data (emails, firstnames, lastnames, addresses &c)
 
 ## Anonymization
 
@@ -12,8 +13,8 @@ The following tables will be processed:
 - emailsubscription
 - mailalert_customer_oos
 
-If a table doest not exist, it is ignored.    
-The module uses the FakerPHP/Faker package to update those tables with fake data (emails, firstnames, lastnames, addresses &c)
+If a table does not exist or a processor is not found, an exception is thrown.   
+The module can accept new table processors if other tables need anonymization.   
 
 ## Installation steps
 
