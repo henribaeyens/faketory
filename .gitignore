@@ -2,3 +2,4 @@
 
 *.xml
 vendor/
+composer.lock
