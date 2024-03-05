@@ -41,6 +41,7 @@ class AddressProcessor extends Processor
                     'city' => $this->faker->city(),
                     'id_country' => 8,
                     'phone' => $this->faker->phoneNumber(),
+                    'phone_mobile' => null
                 ],
                 $this->primaryKey . ' = ' . (int) $objectId[$this->primaryKey]
             );

@@ -1,6 +1,5 @@
 
 
-# MISC
-
 *.xml
 vendor/
+composer.lock
