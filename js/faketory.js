@@ -15,6 +15,10 @@ jQuery(() => {
         $('<div class="alert alert-' + type + '">').text(msg).insertAfter(panelHeading);
     }
 
+    function removeAlerts() {
+        $('#configuration_form .alert').remove();
+    }
+
     submitFaketory.hide();
     acceptWarning.on('change', () => {
         let checked = acceptWarning.filter(':checked').val();
@@ -37,6 +41,7 @@ jQuery(() => {
                 beforeSend: function() {
                     processingInProgess = true;
                     submitFaketory.html('<i class="process-icon-loading"></i> Processing...');
+                    removeAlerts();
                 },
                 }).done((response) => {
                     $.each(response, (key, json) => {

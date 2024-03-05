@@ -38,7 +38,7 @@ class FaketoryController extends FrameworkBundleAdminController
         if (getenv('kernel.environment') === 'prod') {
             return new JsonResponse(
                 [
-                    'status' => 'error',
+                    'status' => 'danger',
                     'msg' => 'Not allowed to process on a production environment'
                 ],
                 Response::HTTP_NOT_ACCEPTABLE
@@ -91,7 +91,7 @@ class FaketoryController extends FrameworkBundleAdminController
                 ];
             } catch (TableNotFoundException|ProcessorNotFoundException|\Exception $e) {
                 $responseData[] = [
-                    'status' => 'error',
+                    'status' => 'danger',
                     'msg' => $table['label'] . $e->getMessage()
                 ];
             }

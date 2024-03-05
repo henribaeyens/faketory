@@ -34,7 +34,7 @@ class Faketory extends Module
     {
         $this->name = 'faketory';
         $this->tab = 'administration';
-        $this->version = '1.0.0';
+        $this->version = '1.1.0';
         $this->author = 'Henri Baeyens';
         $this->need_instance = 0;
 
@@ -118,7 +118,8 @@ class Faketory extends Module
 							'value' => 0,
 							'label' => '',
                         ]
-                    ]
+                    ],
+                    'hint' => $this->l('WARNING: Do not run this action in a production environment!')
                 ],
             ],
             'submit' => [
