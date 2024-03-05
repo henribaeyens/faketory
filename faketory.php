@@ -46,12 +46,12 @@ class Faketory extends Module
 
         $this->displayName = $this->l('Faketory');
         $this->description = $this->l('Anonymizes user data in your developement database.');
-        $this->ps_version = (bool) version_compare(_PS_VERSION_, '1.7', '>=');
+        $this->ps_version = (bool) version_compare(_PS_VERSION_, '1.7.8', '>=');
 
        // $this->logo_path = $this->_path . 'logo.png';
         $this->module_path = $this->_path;
 
-        $this->ps_versions_compliancy = ['min' => '1.7', 'max' => _PS_VERSION_];
+        $this->ps_versions_compliancy = ['min' => '1.7.8', 'max' => _PS_VERSION_];
     }
 
     /**
