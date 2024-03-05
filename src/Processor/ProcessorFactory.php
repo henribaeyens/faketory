@@ -8,18 +8,27 @@
 
 namespace PrestaShop\Module\Faketory\Processor;
 
+use PrestaShop\Module\Faketory\Exception\ProcessorNotFoundException;
+
 class ProcessorFactory
 {
+    /**
+     * Returns a table processor.
+     *
+     * @throws ProcessorNotFoundException
+     */
     public function create(
+        string $processor,
         string $table,
-    ): ProcessorInterface|null {
-        $processorClass = sprintf('PrestaShop\Module\Faketory\Processor\%sProcessor', ucfirst(str_replace('_', '', ucwords($table, '_'))));
+        string $primaryKey
+    ): ProcessorInterface {
+        $processorClass = sprintf('PrestaShop\Module\Faketory\Processor\Table\%sProcessor', ucfirst(str_replace('_', '', ucwords($processor, '_'))));
 
         if (class_exists($processorClass)) {
-            return new $processorClass($table);
+            return new $processorClass($table, $primaryKey);
         }
         
-        return null;
+        throw new ProcessorNotFoundException(sprintf('Processor "%s" not found.', $processorClass));
     }
 
 }

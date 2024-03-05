@@ -100,7 +100,7 @@ class Faketory extends Module
                 'title' => $this->l('Anonymization'),
                 'icon' => 'icon-user-secret'
             ],
-            'error' => $this->l('WARNING: Do not run this action in a production environment!'),
+            'warning' => $this->l('WARNING: Do not run this action in a production environment!'),
             'input' => [
                 [
 					'type' => 'switch',
