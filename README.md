@@ -25,6 +25,11 @@ cd modules/faketory
 composer install
 ```
 
+## Running Faketory
+
+Head to the module configuration, accept the "I understand" warning, and click on the "Anonymize User Data" button.   
+The request is sent via AJAX and the outcome, for each processor, is displayed upon completion of the request.
+
 ## DISCLAIMER
 
 This module should only be used in a development environment (**to anonymize data from a production database dump** for instance).  
