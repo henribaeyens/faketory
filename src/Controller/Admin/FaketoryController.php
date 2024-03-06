@@ -41,9 +41,14 @@ class FaketoryController extends FrameworkBundleAdminController
                     'status' => 'danger',
                     'msg' => 'Not allowed to process on a production environment'
                 ],
-                Response::HTTP_NOT_ACCEPTABLE
+                Response::HTTP_BAD_REQUEST
             );
         }
+
+        $locale = $this->getContextLocale();
+        $localeCode = $locale->getCode();
+        // make sure the locale code has the format xx_XX (getCode() returns xx-XX, possibly xx-xx)
+        $localeCode = substr($localeCode, 0, 2) . '_' . strtoupper(substr($localeCode, -2));
 
         set_time_limit(600);
         ini_set('memory_limit', '512M');
@@ -78,7 +83,7 @@ class FaketoryController extends FrameworkBundleAdminController
         $responseData = [];
         foreach ($processors as $processor => $table) {
             try {
-                $tableProcessor = $this->processorFactory->create($processor, $table['name'], $table['pKey']);
+                $tableProcessor = $this->processorFactory->create($processor, $localeCode, $table['name'], $table['pKey']);
                 $count = $tableProcessor->process();
                 $responseData[] = [
                     'status' => 'success',

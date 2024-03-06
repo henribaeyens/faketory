@@ -25,14 +25,19 @@ abstract class AbstractProcessor implements ProcessorInterface
     protected $table;
     protected $primaryKey;
 
-    public function __construct(string $table, string $primaryKey)
+    public function __construct(
+        string $localeCode,
+        string $table,
+        string $primaryKey
+    )
     {
         $this->dbInstance = Db::getInstance(_PS_USE_SQL_SLAVE_);
-        $this->faker = Factory::create('fr_FR');
+        $this->faker = Factory::create($localeCode);
         $this->anonymousCustomerId = (int) Configuration::get('PSGDPR_ANONYMOUS_CUSTOMER');
         $this->table = $table;
         $this->primaryKey = $primaryKey;
     }
+
     abstract protected function getBatch(int $batchSize, int $batchOffset): array;
     abstract protected function anonymize(array $objectIds): void;
 

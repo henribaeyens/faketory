@@ -34,12 +34,13 @@ class AddressProcessor extends Processor
             $this->dbInstance->update(
                 $this->table,
                 [
+                    'company' => null,
                     'firstname' => $this->faker->firstName(),
                     'lastname' => $this->faker->lastName(),
                     'address1' => $this->faker->streetAddress(),
+                    'address2' => null,
                     'postcode' => $this->faker->postcode(),
                     'city' => $this->faker->city(),
-                    'id_country' => 8,
                     'phone' => $this->faker->phoneNumber(),
                     'phone_mobile' => null
                 ],

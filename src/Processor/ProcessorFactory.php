@@ -19,13 +19,14 @@ class ProcessorFactory
      */
     public function create(
         string $processor,
+        string $localeCode,
         string $table,
         string $primaryKey
     ): ProcessorInterface {
         $processorClass = sprintf('PrestaShop\Module\Faketory\Processor\Table\%sProcessor', ucfirst(str_replace('_', '', ucwords($processor, '_'))));
 
         if (class_exists($processorClass)) {
-            return new $processorClass($table, $primaryKey);
+            return new $processorClass($localeCode, $table, $primaryKey);
         }
         
         throw new ProcessorNotFoundException(sprintf('Processor "%s" not found.', $processorClass));

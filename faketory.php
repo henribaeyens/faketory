@@ -34,7 +34,7 @@ class Faketory extends Module
     {
         $this->name = 'faketory';
         $this->tab = 'administration';
-        $this->version = '1.1.2';
+        $this->version = '1.2.0';
         $this->author = 'Henri Baeyens';
         $this->need_instance = 0;
 

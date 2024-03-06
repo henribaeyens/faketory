@@ -50,7 +50,7 @@ jQuery(() => {
                     submitFaketory.html(submitInner);
                     processingInProgess = false;
                 }).fail(() => {
-                    showAlert('error', 'Request has failed')
+                    showAlert('danger', 'Request has failed')
                     processingInProgess = false;
             });
         }

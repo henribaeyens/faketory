@@ -36,6 +36,10 @@ class CustomerProcessor extends Processor
                     'email' => sprintf('%06d.%s', (int) $objectId[$this->primaryKey], $this->faker->email()),
                     'firstname' => $this->faker->firstName(),
                     'lastname' => $this->faker->lastName(),
+                    'company' => null,
+                    'siret' => null,
+                    'ape' => null,
+                    
                 ],
                 $this->primaryKey . ' = ' . (int) $objectId[$this->primaryKey]
             );
